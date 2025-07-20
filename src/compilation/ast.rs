@@ -1,4 +1,7 @@
-use crate::{common::bytecode::ByteCodes, compilation::token::{Token, TokenSpan}};
+use crate::{
+    common::bytecode::ByteCodes,
+    compilation::token::{Token, TokenSpan},
+};
 
 pub struct AstNode {
     right: Option<usize>,

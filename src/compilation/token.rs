@@ -1,4 +1,3 @@
-
 // Token struct that includes column number for enhanced error messages
 pub struct TokenSpan {
     pub token: Token,
