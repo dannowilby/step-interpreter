@@ -1,9 +1,11 @@
 // Token struct that includes column number for enhanced error messages
+#[derive(Debug)]
 pub struct TokenSpan {
     pub token: Token,
     pub span: usize,
 }
 
+#[derive(Debug)]
 pub enum Token {
     LParen,
     RParen,
@@ -66,7 +68,7 @@ pub fn tokenize(src: String) -> Vec<TokenSpan> {
                 ),
                 span: index,
             });
-            index += num.len();
+            index += num.len() - 1;
         }
 
         if front != ' ' || token_span.is_some() {
