@@ -1,14 +1,19 @@
-use crate::common::{bytecode::ByteCodes, program::Program};
+use crate::{
+    common::program::Program,
+    compilation::{
+        ast::{build_ast, compile_ast},
+        token::tokenize,
+    },
+};
+
+pub mod ast;
+pub mod token;
 
 pub fn compile(source: String) -> Program {
-    let ast = build_ast(&source);
+    let tokens = tokenize(source);
+
+    let ast = build_ast(tokens);
     let bytecode = compile_ast(ast);
 
     Program::new(bytecode)
-}
-
-fn build_ast(src: &str) -> () {}
-
-fn compile_ast(ast: ()) -> Vec<ByteCodes> {
-    vec![]
 }
